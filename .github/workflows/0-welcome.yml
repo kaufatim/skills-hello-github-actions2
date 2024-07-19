@@ -47,6 +47,17 @@ jobs:
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
 
+    name: Post welcome comment
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
+
     steps:
       # We'll need to check out the repository so that we can edit the README.
       - name: Checkout
